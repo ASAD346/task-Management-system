@@ -9,78 +9,82 @@
 
 ## Step-by-Step Setup
 
-### 1. Backend Configuration
+# 1. Backend Configuration
 
-# All backend environment variables are stored in the .env file.
+ All backend environment variables are stored in the .env file.
 
-#  Example:
-
+  Example:
+- {
 - PORT=5000
 - MONGODB_URI=mongodb://localhost:27017/task-management
 - JWT_SECRET=your_jwt_secret_key_here_change_in_production
 - JWT_EXPIRE=7d
 - NODE_ENV=development
+- }
+- Change the PORT and MONGODB_URI values according to your local MongoDB setup.
+- In the backend/createAdmin.js file, update your API URL according to your backend port number:
+- const API_URL = 'http://localhost:5000/api';
+- If your backend runs on a different port (for example 4000), update it accordingly:
+- const API_URL = 'http://localhost:4000/api';
 
-
-➡️ Note:
-Change the PORT and MONGODB_URI values according to your local MongoDB setup.
-
-# 2. Backend API URL
-
-# In the backend/createAdmin.js file, update your API URL according to your backend port number:
-
-const API_URL = 'http://localhost:5000/api';
-
-# If your backend runs on a different port (for example 4000), update it accordingly:
-
-const API_URL = 'http://localhost:4000/api';
-
-#### 2. FrontEnd Configuration
+# 2. FrontEnd Configuration
 
 - In the frontend/api.js file, update the frontend base API URL to match your backend URL:
 - const API_URL = 'http://localhost:5000/api';
 - Both backend and frontend URLs must match for proper communication.
 
-#### 3. Backend Setup
+# 3. Backend Setup
 
-# 1. powershell
+- open powershell
 - Navigate to backend directory
-- ForExample: cd E:\D_Software\task-management-app\backend
+- ForExample:
+- ```
+  cd E:\D_Software\task-management-app\backend
+  ```
 - Install dependencies
-- npm install
-
-# 2.Start the backend server
-- npm run dev
+  ```
+   npm install
+  ```
+- After Installation navigate to same directory
+- And Run the command Below
+  ```
+  npm run dev
+  ```
 - The backend should now be running on `http://localhost:5000`
 - Keep this terminal window open!
 
 
-# 3.Create Initial Admin User
+# 4. Create Initial Admin User
 
 - Open a **NEW** PowerShell window and run:
-
-# 4.powershell
-
-- cd E:\D_Software\task-management-app\backend
-- node createAdmin.js
+- Navigate to Your Directory
+  ```
+  cd E:\D_Software\task-management-app\backend
+  ```
+- And Run the command Below
+  ```
+  node createAdmin.js
+  ```
 - You should see:
-✅ Admin user created successfully!
-Login credentials:
-Email: admin@example.com
-Password: password123
-```
-### 5.Frontend Setup
+- Admin user created successfully!
+  Login credentials:
+- Email: admin@example.com
+- Password: password123
+- 
+# 5. Frontend Setup
 
 - Open **ANOTHER NEW** PowerShell window
 - Navigate to frontend directory
-- cd E:\D_Software\task-management-app\frontend
+  ```
+  cd E:\D_Software\task-management-app\frontend
+  ```
+- And Run the command Below
+  ```
+  npm start
+  ```
+- The frontend will open automatically at `http://localhost:3000`
 
-# 1.Start the React app
-
-npm start
-The frontend will open automatically at `http://localhost:3000`
-
-### 4. Login and Test
+# 6. Login and Test
 
 1. **Login as Admin:**
    - Email: `admin@example.com`
