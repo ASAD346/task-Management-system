@@ -3,7 +3,7 @@
 # 🚀 Quick Start Guide
 
 ## Prerequisites
-- ✅ MongoDB is installed and running (Already confirmed!)
+- ✅ MongoDB is installed and running
 - ✅ Node.js is installed
 - ✅ npm is installed
 
